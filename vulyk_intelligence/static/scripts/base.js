@@ -10,5 +10,14 @@ $(function() {
     }).on("vulyk.skip", function(e, callback) {
         callback();
         $("html, body").animate({ scrollTop: 0 }, "slow");
+    }).on("vulyk.task_error", function(e, data) {
+        $.magnificPopup.open({
+            items: {
+                src: '<div class="zoom-anim-dialog small-dialog">' +
+                '<div class="dialog-content">Нажаль, увесь пакет завдань був виконаний, але дуже скоро ми додамо нові.</div>' +
+                '</div>',
+                type: 'inline'
+            }
+        })
     });
 });
