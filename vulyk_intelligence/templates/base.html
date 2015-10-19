@@ -1,0 +1,64 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+
+<script id="intelligence_template" type="text/x-handlebars-template">
+    {% raw %}
+    <h4>Будь ласка, допоможіть нам зібрати якомога більше інформації про цього кандидата</h4>
+    <table class="table dossier table-bordered">
+        <tr>
+            <th>Регіон</th>
+            <td>{{ region }}</td>
+        </tr>
+        <tr>
+            <th>ПІБ</th>
+            <td>{{ lastname_uk }} {{ firstname_uk }} {{ patronymic_uk }}</td>
+        </tr>
+        <tr>
+            <th>ФИО</th>
+            <td>{{ lastname_ru }} {{ firstname_ru }} {{ patronymic_ru }}</td>
+        </tr>
+    </table>
+
+    <div class="row fill-the-blanks">
+        <h4>Загальна інформація</h4>
+        <div class="col-md-6">
+            <textarea name="general-info" placeholder="Деталі біографії, географія, дата народження, тощо" maxlength="10000"></textarea>
+        </div>
+        <div class="col-md-6 buttons-block">
+            <a class="btn btn-block btn-social btn-google" href="https://www.google.com.ua/search?q={{ lastname_uk }}+{{ firstname_uk }}+{{ patronymic_uk }}&num=20" target="_blank" title="У пошуковій системі Google">
+                <i class="fa fa-google"></i> Шукати «{{ lastname_uk }} {{ firstname_uk }} {{ patronymic_uk }}»
+            </a>
+            <a class="btn btn-block btn-social btn-google" href="https://www.google.com.ua/search?q={{ lastname_uk }}+{{ firstname_uk }}&num=20" target="_blank" title="У пошуковій системі Google">
+                <i class="fa fa-google"></i> Шукати «{{ lastname_uk }} {{ firstname_uk }}»
+            </a>
+            <a class="btn btn-block btn-social btn-google"  href="https://www.google.com.ua/search?q={{ lastname_ru }}+{{ firstname_ru }}+{{ patronymic_ru }}&num=20"target="_blank" title="У пошуковій системі Google">
+                <i class="fa fa-google"></i> Шукати «{{ lastname_ru }} {{ firstname_ru }} {{ patronymic_ru }}»
+            </a>
+            <a class="btn btn-block btn-social btn-google" href="https://www.google.com.ua/search?q={{ lastname_ru }}+{{ firstname_ru }}&num=20" target="_blank" title="У пошуковій системі Google">
+                <i class="fa fa-google"></i> Шукати «{{ lastname_ru }} {{ firstname_ru }}»
+            </a>
+
+            <form action="http://nomer.ws/allukraina/" method="POST" target="_blank">
+                <input type="hidden" value="{{ lastname_ru }}" name="lastName" />
+                <input type="hidden" value="{{ firstname_ru }}" name="firstName" />
+                <input type="hidden" value="{{ patronymic_ru }}" name="middleName" />
+
+                <input type="hidden" value="" name="city" />
+                <input type="hidden" value="" name="nd" />
+                <input type="hidden" value="" name="nkv" />
+                <input type="hidden" value="" name="phone" />
+                <input type="hidden" value="" name="street" />
+                <input type="hidden" value=" Найти " name="searchButton" />
+
+                <button class="btn btn-block btn-social btn-reddit" type="submit" title="На сайті nomer.ws">
+                    <i class="fa fa-home"></i> Шукати «{{ lastname_ru }} {{ firstname_ru }} {{ patronymic_ru }}»
+                </button>
+            </form>
+        </div>
+    </div>
+    {% endraw %}
+</script>
+
+<div id="out">
+
+</div>
+
