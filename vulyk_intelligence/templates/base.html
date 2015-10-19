@@ -24,19 +24,6 @@
             <textarea name="general-info" placeholder="Введіть дату(и) народження з пошуку ПІБ в базі nomer.ws, а також адресу(а) прописки та телефон(и)" maxlength="10000"></textarea>
         </div>
         <div class="col-md-6 buttons-block">
-            <a class="btn btn-block btn-social btn-google" href="https://www.google.com.ua/search?q={{ lastname_uk }}+{{ firstname_uk }}+{{ patronymic_uk }}&num=20" target="_blank" title="У пошуковій системі Google">
-                <i class="fa fa-google"></i> Шукати «{{ lastname_uk }} {{ firstname_uk }} {{ patronymic_uk }}»
-            </a>
-            <a class="btn btn-block btn-social btn-google" href="https://www.google.com.ua/search?q={{ lastname_uk }}+{{ firstname_uk }}&num=20" target="_blank" title="У пошуковій системі Google">
-                <i class="fa fa-google"></i> Шукати «{{ lastname_uk }} {{ firstname_uk }}»
-            </a>
-            <a class="btn btn-block btn-social btn-google"  href="https://www.google.com.ua/search?q={{ lastname_ru }}+{{ firstname_ru }}+{{ patronymic_ru }}&num=20"target="_blank" title="У пошуковій системі Google">
-                <i class="fa fa-google"></i> Шукати «{{ lastname_ru }} {{ firstname_ru }} {{ patronymic_ru }}»
-            </a>
-            <a class="btn btn-block btn-social btn-google" href="https://www.google.com.ua/search?q={{ lastname_ru }}+{{ firstname_ru }}&num=20" target="_blank" title="У пошуковій системі Google">
-                <i class="fa fa-google"></i> Шукати «{{ lastname_ru }} {{ firstname_ru }}»
-            </a>
-
             <form action="http://nomer.ws/allukraina/" method="POST" target="_blank">
                 <input type="hidden" value="{{ lastname_ru }}" name="lastName" />
                 <input type="hidden" value="{{ firstname_ru }}" name="firstName" />
@@ -56,92 +43,110 @@
         </div>
     </div>
 
-
     <div class="row fill-the-blanks">
-        <h4>Родинні зв'язки</h4>
         <div class="col-md-6">
+            <h4>Родинні зв'язки</h4>
             <textarea name="family-info" placeholder="Введіть ПІБ родичів, їх дати народження та тип спорідненості. ПІБ родичів ідентифікуйте з пошуку адреси(ів) прописки п. 1 вище" maxlength="10000"></textarea>
-        </div>
-        <div class="col-md-6 buttons-block">
-        </div>
-    </div>
 
-    <div class="row fill-the-blanks">
-        <h4>Стиль життя</h4>
-        <div class="col-md-6">
+            <h4>Стиль життя</h4>
             <textarea name="lifestyle-info" placeholder="Введіть інформацію у разі, якщо існують ознаки надміру розкішного способу життя або наявності дорогого майна" maxlength="10000"></textarea>
-        </div>
-        <div class="col-md-6 buttons-block">
-        </div>
-    </div>
 
-    <div class="row fill-the-blanks">
-        <h4>Погляди</h4>
-        <div class="col-md-6">
+            <h4>Погляди</h4>
             <textarea name="views-info" placeholder="Уведіть, якщо присутні ознаки толерантності до сепаратизму або іншим потенційно небезпечним явищам" maxlength="10000"></textarea>
-        </div>
-        <div class="col-md-6 buttons-block">
-        </div>
-    </div>
-
-    <div class="row fill-the-blanks">
-        <h4>Толерантність до корупції</h4>
-        <div class="col-md-6">
+            <h4>Толерантність до корупції</h4>
             <textarea name="corruption-info" placeholder="Введіть інформацію, якщо присутні ознаки толерантності до корупції, включаючи дачу хабарів, платежі за подолання адміністративних бар'єрів і т. д." maxlength="10000"></textarea>
-        </div>
-        <div class="col-md-6 buttons-block">
-        </div>
-    </div>
-
-    <div class="row fill-the-blanks">
-        <h4>Зв'язок з бізнес-колами, власний бізнес</h4>
-        <div class="col-md-6">
+            <h4>Зв'язок з бізнес-колами, власний бізнес</h4>
             <textarea name="business-info" placeholder="Введіть інформацію про власний бізнес, його галузь і регіон операцій. Введіть інформацію про наявність досвіду роботи, який може створити конфлікт інтересів при роботі в прокуратурі." maxlength="10000"></textarea>
-        </div>
-        <div class="col-md-6 buttons-block">
-        </div>
-    </div>
-
-    <div class="row fill-the-blanks">
-        <h4>Зв'язок з політиками</h4>
-        <div class="col-md-6">
+            <h4>Зв'язок з політиками</h4>
             <textarea name="politics-info" placeholder="Введіть інформацію про наявність партійності, надмірної агітації за певних політиків\партії або про зв'язки з політиками." maxlength="10000"></textarea>
-        </div>
-        <div class="col-md-6 buttons-block">
-        </div>
-    </div>
-
-    <div class="row fill-the-blanks">
-        <h4>Згадки в ЗМІ</h4>
-        <div class="col-md-6">
+            <h4>Згадки в ЗМІ</h4>
             <textarea name="news-info" placeholder="Введіть негативну і/або значущу інформацію." maxlength="10000"></textarea>
-        </div>
-        <div class="col-md-6 buttons-block">
-        </div>
-    </div>
-
-    <div class="row fill-the-blanks">
-        <h4>Судові справи</h4>
-        <div class="col-md-6">
+            <h4>Судові справи</h4>
             <textarea name="courts-info" placeholder="Введіть інформацію про судових розглядах, з якими був пов'язаний кандидат" maxlength="10000"></textarea>
+            <h4>Інше</h4>
+            <textarea name="misc-info" placeholder="Введіть іншу інформацію, що не війшла у поля вище" maxlength="10000"></textarea>
+
         </div>
-        <div class="col-md-6 buttons-block">
+        <div class="col-md-6 buttons-block buttons-block-offset">
+            <a class="btn btn-block btn-social btn-google" href="https://www.google.com.ua/search?q={{ lastname_uk }}+{{ firstname_uk }}+{{ patronymic_uk }}&num=20" target="_blank" title="У пошуковій системі Google">
+                <i class="fa fa-google"></i> Шукати «{{ lastname_uk }} {{ firstname_uk }} {{ patronymic_uk }}»
+            </a>
+            <a class="btn btn-block btn-social btn-google" href="https://www.google.com.ua/search?q={{ lastname_uk }}+{{ firstname_uk }}&num=20" target="_blank" title="У пошуковій системі Google">
+                <i class="fa fa-google"></i> Шукати «{{ lastname_uk }} {{ firstname_uk }}»
+            </a>
+            <a class="btn btn-block btn-social btn-google"  href="https://www.google.com.ua/search?q={{ lastname_ru }}+{{ firstname_ru }}+{{ patronymic_ru }}&num=20"target="_blank" title="У пошуковій системі Google">
+                <i class="fa fa-google"></i> Шукати «{{ lastname_ru }} {{ firstname_ru }} {{ patronymic_ru }}»
+            </a>
+            <a class="btn btn-block btn-social btn-google" href="https://www.google.com.ua/search?q={{ lastname_ru }}+{{ firstname_ru }}&num=20" target="_blank" title="У пошуковій системі Google">
+                <i class="fa fa-google"></i> Шукати «{{ lastname_ru }} {{ firstname_ru }}»
+            </a>
+            <hr/>
+
+            <a class="btn btn-block btn-social btn-yandex" href="https://yandex.ua/search/?text=?q={{ lastname_uk }}+{{ firstname_uk }}+{{ patronymic_uk }}&numdoc=20" target="_blank" title="У пошуковій системі Yandex">
+                <i class="fa">Я</i> Шукати «{{ lastname_uk }} {{ firstname_uk }} {{ patronymic_uk }}»
+            </a>
+            <a class="btn btn-block btn-social btn-yandex" href="https://yandex.ua/search/?text=?q={{ lastname_uk }}+{{ firstname_uk }}&numdoc=20" target="_blank" title="У пошуковій системі Yandex">
+                <i class="fa">Я</i> Шукати «{{ lastname_uk }} {{ firstname_uk }}»
+            </a>
+            <a class="btn btn-block btn-social btn-yandex" href="https://yandex.ua/search/?text=?q={{ lastname_ru }}+{{ firstname_ru }}+{{ patronymic_ru }}&numdoc=20" target="_blank" title="У пошуковій системі Yandex">
+                <i class="fa">Я</i> Шукати «{{ lastname_ru }} {{ firstname_ru }} {{ patronymic_ru }}»
+            </a>
+            <a class="btn btn-block btn-social btn-yandex" href="https://yandex.ua/search/?text=?q={{ lastname_ru }}+{{ firstname_ru }}+{{ patronymic_ru }}&numdoc=20" target="_blank" title="У пошуковій системі Yandex">
+                <i class="fa">Я</i> Шукати «{{ lastname_ru }} {{ firstname_ru }}»
+            </a>
+
+            <hr/>
+            <a class="btn btn-block btn-social btn-facebook" href="https://www.facebook.com/search/str/{{ lastname_uk }}+{{ firstname_uk }}/keywords_top" target="_blank" title="У мережі Facebook">
+                <i class="fa fa-facebook"></i> Шукати «{{ lastname_uk }} {{ firstname_uk }}»
+            </a>
+            <a class="btn btn-block btn-social btn-facebook" href="https://www.facebook.com/search/str/{{ lastname_ru }}+{{ firstname_ru }}/keywords_top" target="_blank" title="У мережі Facebook">
+                <i class="fa fa-facebook"></i> Шукати «{{ lastname_ru }} {{ firstname_ru }}»
+            </a>
+
+            <a class="btn btn-block btn-social btn-vk" href="http://vk.com/search?c[country]=2&c[name]=1&c[q]={{ lastname_uk }}+{{ firstname_uk }}&c[section]=people" target="_blank" title="У мережі VK">
+                <i class="fa fa-vk"></i> Шукати «{{ lastname_uk }} {{ firstname_uk }}»
+            </a>
+            <a class="btn btn-block btn-social btn-vk" href="http://vk.com/search?c[country]=2&c[name]=1&c[q]={{ lastname_ru }}+{{ firstname_ru }}&c[section]=people" target="_blank" title="У мережі VK">
+                <i class="fa fa-vk"></i> Шукати «{{ lastname_ru }} {{ firstname_ru }}»
+            </a>
+
+            <a class="btn btn-block btn-social btn-odnoklassniki" href="http://www.ok.ru/dk?st.cmd=searchResult&st.query={{ lastname_uk }}+{{ firstname_uk }}" target="_blank" title="У мережі odnoklassniki">
+                <i class="fa fa-odnoklassniki"></i> Шукати «{{ lastname_uk }} {{ firstname_uk }}»
+            </a>
+            <a class="btn btn-block btn-social btn-odnoklassniki" href="http://www.ok.ru/dk?st.cmd=searchResult&st.query={{ lastname_ru }}+{{ firstname_ru }}" target="_blank" title="У мережі odnoklassniki">
+                <i class="fa fa-odnoklassniki"></i> Шукати «{{ lastname_ru }} {{ firstname_ru }}»
+            </a>
+
+            
+            <a class="btn btn-block btn-social btn-linkedin" href="https://www.linkedin.com/vsearch/f?type=all&keywords={{ lastname_uk }}+{{ firstname_uk }}" target="_blank" title="У мережі linkedin">
+                <i class="fa fa-linkedin"></i> Шукати «{{ lastname_uk }} {{ firstname_uk }}»
+            </a>
+
+            <a class="btn btn-block btn-social btn-linkedin" href="https://www.linkedin.com/vsearch/f?type=all&keywords={{ lastname_ru }}+{{ firstname_ru }}" target="_blank" title="У мережі linkedin">
+                <i class="fa fa-linkedin"></i> Шукати «{{ lastname_ru }} {{ firstname_ru }}»
+            </a>
+
+            <hr/>
+            <h5>Спробуйте також</h5>
+            <a class="btn btn-block btn-social btn-misc" href="http://ua24ua.com/" target="_blank" title="Дані фізичних осіб">
+                <i class="fa fa-user"></i> Дані фізичних осіб на ua24ua.com
+            </a>
+            <a class="btn btn-block btn-social btn-misc" href="http://ua24biz.com/" target="_blank" title="Дані юридичних осіб">
+                <i class="fa fa-building"></i> Дані юридичних осіб на ua24biz.com
+            </a>
+            <a class="btn btn-block btn-social btn-misc" href="http://mozdocs.kiev.ua/search-yandex.php" target="_blank" title="Пошук на mozdocs">
+                <i class="fa fa-search"></i> Пошук на mozdocs.kiev.ua
+            </a>
         </div>
     </div>
     
     <div class="row fill-the-blanks">
-        <h4>Інше</h4>
-        <div class="col-md-6">
-            <textarea name="misc-info" placeholder="Введіть іншу інформацію, що не війшла у поля вище" maxlength="10000"></textarea>
-        </div>
-        <div class="col-md-6 buttons-block">
-        </div>
-    </div>
-
-    <div class="row fill-the-blanks">
         <h4>Відмітьте у випадку, якщо по даному кандидату виявлена суттєва негативна інформація</h4>
-        <div class="col-md-12">
-            <input type="checkbox" name="attention" />
+        <div class="col-md-6 funkyradio">
+            <div class="funkyradio-danger">
+                <input type="checkbox" name="attention" id="attention"/>
+                <label for="attention">Є суттєва негативна інформація</label>
+            </div>
         </div>
     </div>
 
