@@ -21,7 +21,7 @@ class IntelligenceTaskType(AbstractTaskType):
     helptext_template = 'help.html'
     type_name = 'intelligence_task'
 
-    redundancy = 5
+    redundancy = 3
 
     JS_ASSETS = ['static/scripts/handlebars.js',
                  'static/scripts/jquery.serializejson.js',
