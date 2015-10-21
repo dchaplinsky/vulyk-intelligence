@@ -1,0 +1,60 @@
+<html>
+<head>
+	<title></title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+{% macro render_textual_block(header, answers, answer_key) %}
+	<h3>{{ header }}</h3>
+	<dl>
+		{% for line in answers if line.answer[answer_key] %}
+			<dt>Волонтер № {{ loop.index }}</dt>
+			<dd>
+				{{ line.answer[answer_key]|replace("\n", "<br/>") }}
+			</dd>
+		{% else %}
+		<dt>—</dt>
+		{% endfor %}
+	</dl>
+{% endmacro %}
+
+{% macro render_flags_block(header, answers) %}
+	<h3>{{ header }}</h3>
+	<dl>
+		{% for line in answers if line.answer.attention or line.answer["know-personally"] %}
+			<dt>Волонтер № {{ loop.index }}</dt>
+			<dd>
+				{% if line.answer["know-personally"] %}
+				Знаю цю людину особисто<br/>
+				{% endif %}
+				{% if line.answer.attention %}
+				<strong>ЗВЕРНІТЬ УВАГУ! Є НЕГАТИВНА ІНФОРМАЦІЯ!</strong>
+				{% endif %}
+			</dd>
+		{% else %}
+		<dt>—</dt>
+		{% endfor %}
+	</dl>
+{% endmacro %}
+
+<body>
+	{% set task = answers[0].task.data %}
+	{% if task %}
+		<h2>{{ task.lastname_uk }} {{ task.firstname_uk }} {{ task.patronymic_uk }}, {{ task.region }}</h2>
+	{% endif %}
+
+	{{ render_flags_block("Особливі примітки", answers) }}
+
+	{{ render_textual_block("Загальна інформація", answers, "general-info") }}
+	{{ render_textual_block("Родинні зв'язки", answers, "family-info") }}
+	{{ render_textual_block("Стиль життя", answers, "lifestyle-info") }}
+
+	{{ render_textual_block("Погляди", answers, "views-info") }}
+	{{ render_textual_block("Толерантність до корупції", answers, "corruption-info") }}
+	{{ render_textual_block("Зв'язок з політиками", answers, "politics-info") }}
+
+	{{ render_textual_block("Згадки в ЗМІ", answers, "news-info") }}
+	{{ render_textual_block("Судові справи", answers, "courts-info") }}
+	{{ render_textual_block("Інше", answers, "misc-info") }}
+</body>
+</html>
