@@ -10,11 +10,18 @@ from weasyprint import HTML
 
 import codecs
 import re
+import requests
+from bs4 import BeautifulSoup
 
 
 def fetch_url(url):
-    print(url)
-    return "Zaloopah"
+    url = url.group(0)
+    try:
+        req = requests.get(url, timeout=10)
+        soup = BeautifulSoup(req.text, 'html.parser')
+        return '<a href="%s">%s</a> (%s)' % (url, url, soup.title.string)
+    except:
+        return url
 
 
 def grab_urls(text):
@@ -47,11 +54,12 @@ def grab_urls(text):
 
     url_re = re.compile(url, re.VERBOSE | re.MULTILINE)
     """Given a text string, returns all the urls we can find in it."""
-    return url_re.sub(text, fetch_url)
+    return url_re.sub(fetch_url, text)
+
 
 def resolve_links(value):
-    print(grab_urls(value))
-    return value
+    # print(grab_urls(value))
+    return grab_urls(value)
 
 
 sys.stdout = codecs.getwriter('utf8')(sys.stdout)
@@ -78,8 +86,6 @@ def export_answers(answers, out_dir):
     else:
         fname = "%s.pdf" % answers[0]["task"]["id"]
 
-    # print(rendered)
-    print(fname)
     HTML(string=rendered).write_pdf(os.path.join(out_dir, fname))
 
 if __name__ == '__main__':
@@ -95,4 +101,3 @@ if __name__ == '__main__':
 
             if answers:
                 export_answers(answers, out_dir)
-                # break

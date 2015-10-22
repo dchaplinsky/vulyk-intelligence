@@ -10,7 +10,7 @@
 		{% for line in answers if line.answer[answer_key] %}
 			<dt>Волонтер № {{ loop.index }}</dt>
 			<dd>
-				{{ line.answer[answer_key]|replace("\n", "<br/>") }}
+				{{ line.answer[answer_key]|resolve_links|replace("\n", "<br/>") }}
 			</dd>
 		{% else %}
 		<dt>—</dt>
