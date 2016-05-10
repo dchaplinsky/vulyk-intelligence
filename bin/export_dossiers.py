@@ -1,17 +1,16 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
-import sys
-import os
-import os.path
-import json
-from jinja2 import Environment, FileSystemLoader
-from weasyprint import HTML
-
 import codecs
+import json
+import os
 import re
-import requests
+import sys
+
 from bs4 import BeautifulSoup
+from jinja2 import Environment, FileSystemLoader
+import requests
+from weasyprint import HTML
 
 
 def fetch_url(url):
