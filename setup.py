@@ -29,8 +29,7 @@ setup(
     packages=[
         'vulyk_intelligence',
         'vulyk_intelligence.models',
-        'vulyk_intelligence.static',
-        'vulyk_intelligence.views'
+        'vulyk_intelligence.static'
     ],
     package_dir={'vulyk_intelligence':
                  'vulyk_intelligence'},
